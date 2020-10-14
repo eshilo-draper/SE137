@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W1 Assignment</title>
+    <style>
+        /* color palette generated with coolors.co because I'm bad at that kind of thing */
+        body {
+            background-color: #CFE0C3;
+        }
+        h1 {
+            color: #1f363D;
+        }
+        h2 {
+            color: #70A9A1;
+        }
+        p {
+            color: black;
+        }
+        a {
+            color: #40798C;
+        }
 
+        .hide {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ethan Shilo-Draper</h1>
+    <hr>
+    <div id="nav">
+        <a href="#">Bio</a>
+        <a href="#">Education</a>
+        <a href="#">Hobbies</a>
+    </div>
+    <hr>
+    <div id="main">
+        <div id="bio">
+            <h2>My Bio</h2>
+            <img src="images/bio.png" alt="A drawing of my face" >
+            <p>
+                I am a 19-year-old college student from Gill, Massachusetts. I live with my parents and my two dogs, Pippin and Ginger.
+                I am studying software engineering at New England Institute of Technology. I am 6 feet and 2 inches tall, and everywhere
+                I go everyone remarks that I am very tall, which I assure you has gotten old. You don't need to tell me, I'm <em>very well
+                aware</em> of this fact.
+            </p>
+            <p>
+                I have lived in the same same house for my entire life. My house is relatively far out in the woods, as it is sandwiched
+                between two nature conservancies, but it is also not far from town, which I find to be a nice balance. I enjoy nature, 
+                and am glad to have places to hike right nearby, but it would not be good to have to drive half an hour for groceries.
+            </p>
+            <hr>
+        </div>
+        <div id="ed" class="hide">
+            <h2>Schooling</h2>
+            <ul>
+                <li>Gill Elementary School</li>
+                <li>Great Falls Middle School</li>
+                <li>Pioneer Valley Chinese Immersion Charter School</li>
+                <li>Vermont Technical College <i>(for two semesters)</i></li>
+            </ul>
+            <hr>
+        </div>
+        <div id="hobbies" class="hide">
+            <h2>Hobbies and Interests</h2>
+            <ol>
+                <li>Art, both traditional and digital</li>
+                <li>Video games, <strong>particularly Nintendo</strong></li>
+                <li>Music: anything from <b>bluegrass to black metal,</b> the weirder the better</li>
+                <li>Movies: I love vintage horror, as well as musicals. Ask me about my love of The Rocky Horror Picture Show!</li>
+                <img src="images/hobbies.png" alt="Nintendo 64 controller">
+                <hr>
+            </ol>
+        </div>
+        <div id="footer">
+            &copy;2020 Ethan Shilo-Draper | W1 Assignment
+        </div>
+    </div>
+    <script>
+        var links = document.querySelectorAll("a");
+
+        var bio = document.querySelector("#bio");
+        var edu = document.querySelector("#ed");
+        var hobbies = document.querySelector("#hobbies");
+
+        links[0].addEventListener("click", function(e){
+            e.preventDefault();
+            bio.classList.remove("hide");
+            edu.classList.add("hide");
+            hobbies.classList.add("hide");
+        });
+
+        links[1].addEventListener("click", function(e){
+            e.preventDefault();
+            edu.classList.remove("hide");
+            bio.classList.add("hide");
+            hobbies.classList.add("hide")
+        });
+
+        links[2].addEventListener("click", function(e){
+            e.preventDefault();
+            hobbies.classList.remove("hide");
+            bio.classList.add("hide");
+            edu.classList.add("hide")
+        });
+    </script>
+</body>
+</html>
